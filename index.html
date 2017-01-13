@@ -89,7 +89,7 @@
 </header>
     <div class="article-content">
         
-        <p>I want to set up another HEXO blog for recording my notes on data science learning. While, when I tried to git the blog to my initial github, it lacks CSS and other elements and I didn&#x2019;t find the reason. So, I thought it was a easy way to build blog on another github account.<br>But due to the key problem, I must set up another key for my computer.</p>
+        <p>I wanted to set up another HEXO blog for recording my notes on data science learning. While, when I tried to git the blog to my initial github, it lacks CSS and other elements and I didn&#x2019;t find the reason. So, I thought it was a easy way to build blog on another github account. But due to the key problem, I must set up another key for my computer.</p>
 <h2 id="set-up-another-key-for-my-new-github-account"><a href="#set-up-another-key-for-my-new-github-account" class="headerlink" title="set up another key for my new github account"></a>set up another key for my new github account</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;your-email-address&quot;</div></pre></td></tr></table></figure>
 <p>When see such img, DON&#x2019;T press the enter or name the <code>id_rsa</code>, it will cover your first key, just name it like, <code>id_rsa_2</code></p>
 <p><img src="/2017/01/13/twogithubonsamepc/1.png" alt="new name"></p>
@@ -151,7 +151,7 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/01/13/20123/" title="Use &lt;&gt; in SQL QUERIY" itemprop="url">Use &lt;&gt; in SQL QUERIY</a>
+      <a href="/2017/01/13/20123/" title="Use &lt;&gt;!= in SQL self join" itemprop="url">Use &lt;&gt;!= in SQL self join</a>
   </h1>
   <p class="article-author">By
        
@@ -164,7 +164,11 @@
 </header>
     <div class="article-content">
         
-        <h1 id="eeeee"><a href="#eeeee" class="headerlink" title="eeeee"></a>eeeee</h1>
+        <p>In this quiz, we try to find who lives in the same dorm, and the query almost works.<br><img src="/2017/01/13/20123/1.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">select a.id, b.id, a.building, a.room</div><div class="line">       from residences as a, residences as b</div><div class="line"> where a.building = b.building</div><div class="line">   and a.room = b.room and a.id &lt; b.id</div><div class="line"> group by a.room;</div><div class="line"></div><div class="line"> output:</div><div class="line"> +--------+--------+----------+------+</div><div class="line"> |     id |     id | building | room |</div><div class="line"> +========+========+==========+======+</div><div class="line"> | 881256 | 413001 |   Crosby |   10 |</div><div class="line"> | 741532 | 496747 |   Crosby |   19 |</div><div class="line"> | 931027 | 612413 |   Crosby |   31 |</div><div class="line"> | 958827 | 170267 | Dolliver |    1 |</div><div class="line"> | 707536 | 104131 | Dolliver |   14 |</div><div class="line"> | 505241 | 477801 | Dolliver |    8 |</div><div class="line"> | 824292 | 118199 | Kendrick |   1A |</div><div class="line"> | 231742 | 105540 | Kendrick |   3B |</div><div class="line"> +--------+--------+----------+------+</div></pre></td></tr></table></figure>
+<p>There, we use &lt;(or &gt;) to make sure the situation that one person only appear once in either column1 or column2, they cannot be their own roommate.<br>If we not add this judgment, the result will be:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">select a.id, b.id, a.building, a.room</div><div class="line">       from residences as a, residences as b</div><div class="line"> where a.building = b.building</div><div class="line">   and a.room = b.room</div><div class="line"> group by a.room;</div><div class="line"></div><div class="line"> output:</div><div class="line">+--------+--------+----------+------+</div><div class="line">|     id |     id | building | room |</div><div class="line">+========+========+==========+======+</div><div class="line">| 958827 | 958827 | Dolliver |    1 |  &lt;-- this person is their own roommate?!</div><div class="line">| 881256 | 881256 |   Crosby |   10 |  &lt;-- this person is their own roommate?!</div><div class="line">| 707536 | 707536 | Dolliver |   14 |  &lt;-- this person is their own roommate?!</div><div class="line">| 741532 | 741532 |   Crosby |   19 |  &lt;-- this person is their own roommate?!</div><div class="line">| 824292 | 824292 | Kendrick |   1A |  &lt;-- this person is their own roommate?!</div><div class="line">| 410315 | 410315 |   Crosby |   20 |  &lt;-- this person is their own roommate?!</div><div class="line">| 498446 | 498446 |   Crosby |   21 |  &lt;-- this person is their own roommate?!</div><div class="line">| 851866 | 851866 |   Crosby |   22 |  &lt;-- this person is their own roommate?!</div><div class="line">| 250841 | 250841 | Kendrick |   2B |  &lt;-- this person is their own roommate?!</div><div class="line">| 931027 | 931027 |   Crosby |   31 |  &lt;-- this person is their own roommate?!</div><div class="line">| 231742 | 231742 | Kendrick |   3B |  &lt;-- this person is their own roommate?!</div><div class="line">| 161282 | 161282 | Dolliver |    7 |  &lt;-- this person is their own roommate?!</div><div class="line">| 505241 | 505241 | Dolliver |    8 |  &lt;-- this person is their own roommate?!</div><div class="line">| 762907 | 762907 | Dolliver |    9 |  &lt;-- this person is their own roommate?!</div><div class="line">+--------+--------+----------+------+</div></pre></td></tr></table></figure>
+
         
         
         <p class="article-more-link">
@@ -182,7 +186,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/SQL/">SQL</a>
+  <span></span> <a href="/tags/SQL-quiz/">SQL,quiz</a>
   </div>
 
 </div>
@@ -241,11 +245,13 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/SQL/" title="SQL">SQL<sup>1</sup></a></li>
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+				<li><a href="/tags/SQL-quiz/" title="SQL,quiz">SQL,quiz<sup>1</sup></a></li>
+			
+		
 			
 		
 			
