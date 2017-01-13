@@ -89,9 +89,19 @@
 </header>
     <div class="article-content">
         
-        <p>I want to set up another HEXO blog for recording my notes on data science learning. While, when I tried to git the blog to my initial github, it lacks CSS and other elements and I didn&#x2019;t find the reason.<br>So, I thought it was a easy way to build blog on another github account.<br>But due to the key problem, I must set up another key for my computer.</p>
-<h2 id="1-set-up-another-key-for-my-new-github-account"><a href="#1-set-up-another-key-for-my-new-github-account" class="headerlink" title="1. set up another key for my new github account"></a>1. set up another key for my new github account</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;your-email-address&quot;</div></pre></td></tr></table></figure>
-<p><img src="/2017/01/13/twogithubonsamepc/1.png" alt="logo"></p>
+        <p>I want to set up another HEXO blog for recording my notes on data science learning. While, when I tried to git the blog to my initial github, it lacks CSS and other elements and I didn&#x2019;t find the reason. So, I thought it was a easy way to build blog on another github account.<br>But due to the key problem, I must set up another key for my computer.</p>
+<h2 id="set-up-another-key-for-my-new-github-account"><a href="#set-up-another-key-for-my-new-github-account" class="headerlink" title="set up another key for my new github account"></a>set up another key for my new github account</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;your-email-address&quot;</div></pre></td></tr></table></figure>
+<p>When see this img, DON&#x2019;T press the enter or name the id_rsa, it will cover your first key, just name it like, id_rsa_2</p>
+<p><img src="/2017/01/13/twogithubonsamepc/1.png" alt=""></p>
+<h2 id="get-the-ssh-of-new-key"><a href="#get-the-ssh-of-new-key" class="headerlink" title="get the ssh of new key"></a>get the ssh of new key</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat id_rsa.pub</div></pre></td></tr></table></figure>
+<p>to get the new ssh code and paste it to the github</p>
+<h2 id="set-ssh-config"><a href="#set-ssh-config" class="headerlink" title="set .ssh/config"></a>set .ssh/config</h2><p><img src="/2017/01/13/twogithubonsamepc/2.png" alt=".ssh file"></p>
+<p>In the ssh file, set a new file named config , and add this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#default github</div><div class="line">Host github.com</div><div class="line">  HostName github.com</div><div class="line">  IdentityFile ~/.ssh/id_rsa</div><div class="line"></div><div class="line">Host github_2   #remeber the name of host</div><div class="line">  HostName github.com</div><div class="line">  IdentityFile ~/.ssh/id_rsa_2 #replace the name you set for the second key</div></pre></td></tr></table></figure>
+<h2 id="Try"><a href="#Try" class="headerlink" title="Try!"></a>Try!</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#push to the github</div><div class="line">$ git remote add origin git@github_2:xxxx/test.git  #the name after @, must be the same as the second host name in the config file.</div><div class="line">$ git push origin master</div></pre></td></tr></table></figure>
+<h2 id="Modify-on-the-HEXO"><a href="#Modify-on-the-HEXO" class="headerlink" title="Modify on the HEXO"></a>Modify on the HEXO</h2><p>Open the _config.yml file, and find the git setting, change the repository address</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github_2:xxxxxx/notes.git  #the name after @, must be the same as the second host name in the config file.</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>Hope it wil be helpful!</p>
 
         
         
@@ -274,11 +284,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/SQL/" title="SQL">SQL<sup>1</sup></a></li>
+				<li><a href="/tags/gituse/" title="gituse">gituse<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/gituse/" title="gituse">gituse<sup>1</sup></a></li>
+				<li><a href="/tags/SQL/" title="SQL">SQL<sup>1</sup></a></li>
 			
 		
 		</ul>
