@@ -251,6 +251,160 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/14/leftjoin/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="ClarkYu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Notes on Data Science">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Notes on Data Science" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/14/leftjoin/" itemprop="url">
+                  Left and right join
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-14T10:40:32+00:00">
+                2017-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/14/leftjoin/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/leftjoin/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>SQL supports a number of variations on the theme of joins. The kind of join that you have seen earlier in this course is called an inner join, and it is the most common kind of join &#x2014; so common that SQL doesn&#x2019;t actually make us say &#x201C;inner join&#x201D; to do one.</p>
+<p>But the second most common is the left join, and its mirror-image partner, the right join. The words &#x201C;left&#x201D; and &#x201C;right&#x201D; refer to the tables to the left and right of the join operator. (Above, the left table is products and the right table is sales.)</p>
+<p>A regular (inner) join returns only those rows where the two tables have entries matching the join condition. A left join returns all those rows, plus the rows where the left table has an entry but the right table doesn&#x2019;t. And a right join does the same but for the right table.</p>
+<p>(Just as &#x201C;join&#x201D; is short for &#x201C;inner join&#x201D;, so too is &#x201C;left join&#x201D; actually short for &#x201C;left outer join&#x201D;. But SQL lets us just say &#x201C;left join&#x201D;, which is a lot less typing. So we&#x2019;ll do that.)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/13/titanic-report/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -365,7 +519,7 @@
           <p>This is one of projects of Udacity courses.</p>
 <h1 id="Titanic-Data-analysis-Report"><a href="#Titanic-Data-analysis-Report" class="headerlink" title="Titanic Data analysis Report"></a>Titanic Data analysis Report</h1><h2 id="The-aim-of-the-analysis"><a href="#The-aim-of-the-analysis" class="headerlink" title="The aim of the analysis"></a>The aim of the analysis</h2><p>Use NumPy and Pandas to analyze the Titanic data to find the relationship between multiple variables.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</div><div class="line">%pylab inline</div><div class="line"></div><div class="line">titanic_df = pd.read_csv(<span class="string">&apos;titanic-data.csv&apos;</span>)</div></pre></td></tr></table></figure>
-<h2 id="Raise-questions"><a href="#Raise-questions" class="headerlink" title="Raise questions"></a>Raise questions</h2><p>Thus Titanic is a well-known tragedy, so the mortality rate is an important measurement of the severity, in other word, the survived rate should be analyzed in detail. My major question is &#x201C;What factors can influenced the survival rate and how to influence?&#x201D;</p>
+<h2 id="Raise-questions"><a href="#Raise-questions" class="headerlink" title="Raise questions"></a>Raise questions</h2><p>Thus Titanic is a well-known tragedy, so the mortality rate is an important measurement of the severity. In other word, the survived rate should be analyzed in detail. My major question is &#x201C;What factors can influence the survival rate and how to influence?&#x201D;</p>
 <p>In the case, the raw data uses 1 or 0 to represent the survived condition, so the mean of &#x201C;Survived&#x201D; column is actually the survival rate. It makes analysis a little succinct.</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -756,7 +910,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -774,7 +928,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

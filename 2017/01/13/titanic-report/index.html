@@ -112,7 +112,7 @@ Titanic Data analysis ReportThe aim of the analysisUse NumPy and Pandas to analy
 <meta property="og:image" content="https://clarkdatascience.github.io/2017/01/13/titanic-report/output_35_1.png">
 <meta property="og:image" content="https://clarkdatascience.github.io/2017/01/13/titanic-report/output_37_0.png">
 <meta property="og:image" content="https://clarkdatascience.github.io/2017/01/13/titanic-report/output_38_0.png">
-<meta property="og:updated_time" content="2017-01-14T00:20:59.696Z">
+<meta property="og:updated_time" content="2017-01-14T10:48:00.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Titanic Analysis report">
 <meta name="twitter:description" content="This is one of projects of Udacity courses.
@@ -385,7 +385,7 @@ Titanic Data analysis ReportThe aim of the analysisUse NumPy and Pandas to analy
         <p>This is one of projects of Udacity courses.</p>
 <h1 id="Titanic-Data-analysis-Report"><a href="#Titanic-Data-analysis-Report" class="headerlink" title="Titanic Data analysis Report"></a>Titanic Data analysis Report</h1><h2 id="The-aim-of-the-analysis"><a href="#The-aim-of-the-analysis" class="headerlink" title="The aim of the analysis"></a>The aim of the analysis</h2><p>Use NumPy and Pandas to analyze the Titanic data to find the relationship between multiple variables.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</div><div class="line">%pylab inline</div><div class="line"></div><div class="line">titanic_df = pd.read_csv(<span class="string">&apos;titanic-data.csv&apos;</span>)</div></pre></td></tr></table></figure>
-<h2 id="Raise-questions"><a href="#Raise-questions" class="headerlink" title="Raise questions"></a>Raise questions</h2><p>Thus Titanic is a well-known tragedy, so the mortality rate is an important measurement of the severity, in other word, the survived rate should be analyzed in detail. My major question is &#x201C;What factors can influenced the survival rate and how to influence?&#x201D;</p>
+<h2 id="Raise-questions"><a href="#Raise-questions" class="headerlink" title="Raise questions"></a>Raise questions</h2><p>Thus Titanic is a well-known tragedy, so the mortality rate is an important measurement of the severity. In other word, the survived rate should be analyzed in detail. My major question is &#x201C;What factors can influence the survival rate and how to influence?&#x201D;</p>
 <p>In the case, the raw data uses 1 or 0 to represent the survived condition, so the mean of &#x201C;Survived&#x201D; column is actually the survival rate. It makes analysis a little succinct.</p>
 <a id="more"></a>
 <h2 id="Data-Wrangling"><a href="#Data-Wrangling" class="headerlink" title="Data Wrangling"></a>Data Wrangling</h2><p>The Data is raw, so I need to check it and find if there are something needed to modify.</p>
@@ -409,10 +409,10 @@ Cabin          204 non-null object
 Embarked       889 non-null object
 dtypes: float64(2), int64(5), object(5)
 memory usage: 83.6+ KB
-</code></pre><p>There are 891 rows in Titanic Data, it is noted that age,cabin and embarked datas are missing.While,in this report, I only focus on age data. When I look the &#x201C;age&#x201D; data, I find something are missing(NaN), I can use .dropna() to delete these missing data when I deal with the analysis that relates with the age.</p>
+</code></pre><p>There are 891 rows in Titanic Data, it is noted that age, cabin and embarked data are missing. While, in this report, I only focus on age data. When I look the &#x201C;age&#x201D; data, I find something are missing(NaN), I can use <code>.dropna()</code> to delete these missing data when I deal with the analysis that relates with the age.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">titanic_df_dropna = titanic_df.dropna(subset=[<span class="string">&apos;Age&apos;</span>]) <span class="comment">#use it when use age variables &#x628A;age&#x5F53;&#x4E2D;&#x7684;&#x65E0;&#x6548;&#x9879;&#x76EE;&#x6392;&#x9664;</span></div><div class="line">titanic_df_dropna.describe()</div></pre></td></tr></table></figure>
 <p><img src="/2017/01/13/titanic-report/2.png" alt="png"></p>
-<p>Now, <strong>titanic_df_dropna</strong> is a new data frame work that reduce the row with missing age data. But when we analysis other data without age variables, still use titanic_df.</p>
+<p>Now, <strong>titanic_df_dropna</strong> is a new data frame work that reduce the row with missing age data. But when we analysis other data without age variables, still use <code>titanic_df</code>.</p>
 <p>Besides, the max of Fare is 512.33,far out of the 75%. It maybe wrong. But when check the data again, there actually exists some ticket that are higher than others, it should be seen as normal data.</p>
 <h2 id="Select-variables"><a href="#Select-variables" class="headerlink" title="Select variables"></a>Select variables</h2><p>Due to the experience, before the analysis, I think the sex, age, class and whether having families aboard are major factors. So I will measure them one by one.</p>
 <h2 id="Start-analysis"><a href="#Start-analysis" class="headerlink" title="Start analysis"></a>Start analysis</h2><h3 id="Single-variable"><a href="#Single-variable" class="headerlink" title="Single-variable"></a>Single-variable</h3><p>First, use histogram or boxplot to conduct single-variable explorations.</p>
@@ -442,7 +442,7 @@ Name: Pclass, dtype: int64
 <h3 id="4-Sex"><a href="#4-Sex" class="headerlink" title="4. Sex"></a>4. Sex</h3><p>More male than female on the boat. The total count of female is 314, male is 5777.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sex_group = titanic_df.groupby([<span class="string">&apos;Sex&apos;</span>])</div><div class="line">sex_group.describe()</div></pre></td></tr></table></figure>
 <p><img src="/2017/01/13/titanic-report/3.png" alt="png"></p>
-<h3 id="Multiple-variable"><a href="#Multiple-variable" class="headerlink" title="Multiple-variable"></a>Multiple-variable</h3><h4 id="1-Survival-rate-by-class"><a href="#1-Survival-rate-by-class" class="headerlink" title="1. Survival rate by class"></a>1. Survival rate by class</h4><p>In the below graph, it is clear to see that different class has different survival rate. The first class has the highest rate, followed by second class and third class. It accords with the fact that most of higher class people had well cabins which were easy to access the safe place on the boat when accident happend and these people might have the priority to use lifeboats.</p>
+<h3 id="Multiple-variable"><a href="#Multiple-variable" class="headerlink" title="Multiple-variable"></a>Multiple-variable</h3><h4 id="1-Survival-rate-by-class"><a href="#1-Survival-rate-by-class" class="headerlink" title="1. Survival rate by class"></a>1. Survival rate by class</h4><p>In the below graph, it is clear to see that different class has different survival rate. The first class has the highest rate, followed by second class and third class. It accords with the fact that most of higher class people had well cabins which were easy to access the safe place on the boat when accident happened and these people might have the priority to use lifeboats.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#avaerage survived rated differed by class</span></div><div class="line">class_group = titanic_df.groupby([<span class="string">&apos;Pclass&apos;</span>])</div><div class="line">class_group.mean()[<span class="string">&apos;Survived&apos;</span>].plot(kind=<span class="string">&quot;bar&quot;</span>)</div><div class="line">plt.xlabel(<span class="string">&apos;Class&apos;</span>)</div><div class="line">plt.ylabel(<span class="string">&apos;Survival rate&apos;</span>)</div><div class="line">plt.title(<span class="string">&apos;Survival rate by class&apos;</span>)</div></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.text.Text at 0x1b0ef1d0&gt;
 </code></pre><p><img src="/2017/01/13/titanic-report/output_24_1.png" alt="png"></p>
@@ -462,7 +462,7 @@ Name: Pclass, dtype: int64
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">sex_age_group_mean = titanic_df_dropna.groupby([<span class="string">&apos;Age&apos;</span>,<span class="string">&apos;Sex&apos;</span>],as_index=<span class="keyword">False</span>).mean()</div><div class="line">male_group = sex_age_group_mean[sex_age_group_mean[<span class="string">&apos;Sex&apos;</span>] == <span class="string">&apos;male&apos;</span>]</div><div class="line">female_group = sex_age_group_mean[sex_age_group_mean[<span class="string">&apos;Sex&apos;</span>] == <span class="string">&apos;female&apos;</span>]</div><div class="line"></div><div class="line">male_survived_group = plt.plot(male_group[<span class="string">&apos;Age&apos;</span>],male_group[<span class="string">&apos;Survived&apos;</span>],label=<span class="string">&apos;Male&apos;</span>)</div><div class="line">female_survived_group = plt.plot(female_group[<span class="string">&apos;Age&apos;</span>],female_group[<span class="string">&apos;Survived&apos;</span>], label=<span class="string">&apos;Female&apos;</span>,c=<span class="string">&quot;r&quot;</span>)</div><div class="line">plt.legend()</div><div class="line">plt.xlabel(<span class="string">&apos;Age&apos;</span>)</div><div class="line">plt.ylabel(<span class="string">&apos;Survival rate&apos;</span>)</div><div class="line">plt.title(<span class="string">&apos;Survival rate of age and sex&apos;</span>)</div></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.text.Text at 0x174425c0&gt;
 </code></pre><p><img src="/2017/01/13/titanic-report/output_32_1.png" alt="png"></p>
-<p>Next, I select the age range, from 0 to 80(because the maximum in the df.describe() tell us the max is 80),the interval is 10.The result can be seen in the below. Now it seems good, we can clearly find that for total, 20~40 years old people seems has relatively lower survival rate than others. Female has higher rate than males, and if you are a female, older age maybe an advantage, which is opposite to the male&#x2019;s condition.</p>
+<p>Next, I select the age range, from 0 to 80(because the maximum in the <code>df.describe()</code> tell us the max is 80),the interval is 10.The result can be seen in the below. Now it seems good, we can clearly find that for total, 20~40 years old people seems has relatively lower survival rate than others. Female has higher rate than males, and if you are a female, older age maybe an advantage, which is opposite to the male&#x2019;s condition.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">generate_range_df(age_group).plot(kind=<span class="string">&quot;bar&quot;</span>)</div><div class="line">generate_range_df(age_group).plot(kind=<span class="string">&quot;line&quot;</span>)</div><div class="line"><span class="comment">#New in version 0.17.0: Each plot kind has a corresponding method on the DataFrame.plot accessor:</span></div><div class="line"><span class="comment">#df.plot(kind=&apos;line&apos;) is equivalent to df.plot.line().</span></div></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x18971b38&gt;
 </code></pre><p><img src="/2017/01/13/titanic-report/output_34_1.png" alt="png"></p>
@@ -476,7 +476,7 @@ Name: Pclass, dtype: int64
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">draw_barplot(<span class="string">&apos;Parch&apos;</span>,<span class="string">&apos;Parents/Children&apos;</span>,<span class="string">&quot;yellow&quot;</span>)</div></pre></td></tr></table></figure>
 <p><img src="/2017/01/13/titanic-report/output_38_0.png" alt="png"></p>
 <p>Second Survival rate by Parents/Children Aboard, the result was similar.</p>
-<h2 id="Conclusion-and-limitation"><a href="#Conclusion-and-limitation" class="headerlink" title="Conclusion and limitation"></a>Conclusion and limitation</h2><p>So what factors could influence the survival rate? In other words, if you were a passenger on Titanic at that time,how could you be survived?</p>
+<h2 id="Conclusion-and-limitation"><a href="#Conclusion-and-limitation" class="headerlink" title="Conclusion and limitation"></a>Conclusion and limitation</h2><p>So what factors could influence the survival rate? In other words, if you were a passenger on Titanic at that time, how could you be survived?</p>
 <ol>
 <li>be a female.</li>
 <li>be younger.</li>
@@ -530,6 +530,10 @@ Name: Pclass, dtype: int64
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/14/leftjoin/" rel="prev" title="Left and right join">
+                Left and right join <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -606,7 +610,7 @@ Name: Pclass, dtype: int64
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -624,7 +628,7 @@ Name: Pclass, dtype: int64
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
