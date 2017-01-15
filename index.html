@@ -483,6 +483,50 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/numpy/" itemprop="url" rel="index">
+                    <span itemprop="name">numpy</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/numpy/pandas/" itemprop="url" rel="index">
+                    <span itemprop="name">pandas</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/numpy/pandas/Udacity/" itemprop="url" rel="index">
+                    <span itemprop="name">Udacity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -519,7 +563,8 @@
 
       
         
-          <h1 id="&#x5BFC;&#x5165;numpy&#x5E93;"><a href="#&#x5BFC;&#x5165;numpy&#x5E93;" class="headerlink" title="&#x5BFC;&#x5165;numpy&#x5E93;"></a>&#x5BFC;&#x5165;numpy&#x5E93;</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="comment"># First 20 countries with employment data</span></div><div class="line">countries = np.array([</div><div class="line">    <span class="string">&apos;Afghanistan&apos;</span>, <span class="string">&apos;Albania&apos;</span>, <span class="string">&apos;Algeria&apos;</span>, <span class="string">&apos;Angola&apos;</span>, <span class="string">&apos;Argentina&apos;</span>,</div><div class="line">    <span class="string">&apos;Armenia&apos;</span>, <span class="string">&apos;Australia&apos;</span>, <span class="string">&apos;Austria&apos;</span>, <span class="string">&apos;Azerbaijan&apos;</span>, <span class="string">&apos;Bahamas&apos;</span>,</div><div class="line">    <span class="string">&apos;Bahrain&apos;</span>, <span class="string">&apos;Bangladesh&apos;</span>, <span class="string">&apos;Barbados&apos;</span>, <span class="string">&apos;Belarus&apos;</span>, <span class="string">&apos;Belgium&apos;</span>,</div><div class="line">    <span class="string">&apos;Belize&apos;</span>, <span class="string">&apos;Benin&apos;</span>, <span class="string">&apos;Bhutan&apos;</span>, <span class="string">&apos;Bolivia&apos;</span>,</div><div class="line">    <span class="string">&apos;Bosnia and Herzegovina&apos;</span></div><div class="line">])</div><div class="line"></div><div class="line"><span class="comment"># Employment data in 2007 for those 20 countries</span></div><div class="line">employment = np.array([</div><div class="line">    <span class="number">55.70000076</span>,  <span class="number">51.40000153</span>,  <span class="number">50.5</span>       ,  <span class="number">75.69999695</span>,</div><div class="line">    <span class="number">58.40000153</span>,  <span class="number">40.09999847</span>,  <span class="number">61.5</span>       ,  <span class="number">57.09999847</span>,</div><div class="line">    <span class="number">60.90000153</span>,  <span class="number">66.59999847</span>,  <span class="number">60.40000153</span>,  <span class="number">68.09999847</span>,</div><div class="line">    <span class="number">66.90000153</span>,  <span class="number">53.40000153</span>,  <span class="number">48.59999847</span>,  <span class="number">56.79999924</span>,</div><div class="line">    <span class="number">71.59999847</span>,  <span class="number">58.40000153</span>,  <span class="number">70.40000153</span>,  <span class="number">41.20000076</span></div><div class="line">])</div></pre></td></tr></table></figure>
+          <p>&#x5BFC;&#x5165;numpy&#x5E93;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="comment"># First 20 countries with employment data</span></div><div class="line">countries = np.array([</div><div class="line">    <span class="string">&apos;Afghanistan&apos;</span>, <span class="string">&apos;Albania&apos;</span>, <span class="string">&apos;Algeria&apos;</span>, <span class="string">&apos;Angola&apos;</span>, <span class="string">&apos;Argentina&apos;</span>,</div><div class="line">    <span class="string">&apos;Armenia&apos;</span>, <span class="string">&apos;Australia&apos;</span>, <span class="string">&apos;Austria&apos;</span>, <span class="string">&apos;Azerbaijan&apos;</span>, <span class="string">&apos;Bahamas&apos;</span>,</div><div class="line">    <span class="string">&apos;Bahrain&apos;</span>, <span class="string">&apos;Bangladesh&apos;</span>, <span class="string">&apos;Barbados&apos;</span>, <span class="string">&apos;Belarus&apos;</span>, <span class="string">&apos;Belgium&apos;</span>,</div><div class="line">    <span class="string">&apos;Belize&apos;</span>, <span class="string">&apos;Benin&apos;</span>, <span class="string">&apos;Bhutan&apos;</span>, <span class="string">&apos;Bolivia&apos;</span>,</div><div class="line">    <span class="string">&apos;Bosnia and Herzegovina&apos;</span></div><div class="line">])</div><div class="line"></div><div class="line"><span class="comment"># Employment data in 2007 for those 20 countries</span></div><div class="line">employment = np.array([</div><div class="line">    <span class="number">55.70000076</span>,  <span class="number">51.40000153</span>,  <span class="number">50.5</span>       ,  <span class="number">75.69999695</span>,</div><div class="line">    <span class="number">58.40000153</span>,  <span class="number">40.09999847</span>,  <span class="number">61.5</span>       ,  <span class="number">57.09999847</span>,</div><div class="line">    <span class="number">60.90000153</span>,  <span class="number">66.59999847</span>,  <span class="number">60.40000153</span>,  <span class="number">68.09999847</span>,</div><div class="line">    <span class="number">66.90000153</span>,  <span class="number">53.40000153</span>,  <span class="number">48.59999847</span>,  <span class="number">56.79999924</span>,</div><div class="line">    <span class="number">71.59999847</span>,  <span class="number">58.40000153</span>,  <span class="number">70.40000153</span>,  <span class="number">41.20000076</span></div><div class="line">])</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/01/15/Numpy-and-pandas-for-1D-data/#more" rel="contents">
