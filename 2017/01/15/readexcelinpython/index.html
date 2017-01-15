@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SQL," />
+  <meta name="keywords" content="Dara Wrangling,Python," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
+<meta name="description" content="There is high requirement of data format. It should include rows and columns.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Set the query as a table">
-<meta property="og:url" content="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/index.html">
+<meta property="og:title" content="Import excel to python">
+<meta property="og:url" content="https://clarkdatascience.github.io/2017/01/15/readexcelinpython/index.html">
 <meta property="og:site_name" content="Notes on Data Science">
-<meta property="og:description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
-<meta property="og:updated_time" content="2017-01-14T11:40:27.555Z">
+<meta property="og:description" content="There is high requirement of data format. It should include rows and columns.">
+<meta property="og:updated_time" content="2017-01-15T21:51:00.026Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Set the query as a table">
-<meta name="twitter:description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
+<meta name="twitter:title" content="Import excel to python">
+<meta name="twitter:description" content="There is high requirement of data format. It should include rows and columns.">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/"/>
+  <link rel="canonical" href="https://clarkdatascience.github.io/2017/01/15/readexcelinpython/"/>
 
 
 
 
 
-  <title> Set the query as a table | Notes on Data Science </title>
+  <title> Import excel to python | Notes on Data Science </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/">
+  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/15/readexcelinpython/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="ClarkYu">
@@ -274,7 +274,7 @@
             
             
               
-                Set the query as a table
+                Import excel to python
               
             
           </h1>
@@ -289,8 +289,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-14T11:37:19+00:00">
-                2017-01-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-15T20:59:22+00:00">
+                2017-01-15
               </time>
             
 
@@ -312,8 +312,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SQL/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL</span>
+                  <a href="/categories/Data-Wrangling/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Wrangling</span>
                   </a>
                 </span>
 
@@ -330,8 +330,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/14/onequerynottwo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/onequerynottwo/" itemprop="commentCount"></span>
+                <a href="/2017/01/15/readexcelinpython/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/15/readexcelinpython/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +357,8 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># Find the players whose weight is less than the average.</div><div class="line">#</div><div class="line"># The function below performs two database queries in order to find the right players.</div><div class="line"># Refactor this code so that it performs only one query.</div><div class="line"></div><div class="line">def lightweights(cursor):</div><div class="line">    &quot;&quot;&quot;Returns a list of the players in the db whose weight is less than the average.&quot;&quot;&quot;</div><div class="line">    cursor.execute(&quot;select avg(weight) as av from players;&quot;)</div><div class="line">    av = cursor.fetchall()[0][0]  # first column of first (and only) row</div><div class="line">    cursor.execute(&quot;select name, weight from players where weight &lt; &quot; + str(av))</div><div class="line">    return cursor.fetchall()</div><div class="line"></div><div class="line"></div><div class="line">right answer:</div><div class="line"></div><div class="line">select name, weight</div><div class="line">from players, (select avg(weight) as av from players) as subq</div><div class="line">where weight &lt; av;</div></pre></td></tr></table></figure>
+        <p>There is high requirement of data format. It should include rows and columns.<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">import xlrd</div><div class="line"></div><div class="line">datafile = &quot;example.xls&quot;</div><div class="line"></div><div class="line"></div><div class="line">def parse_file(datafile):</div><div class="line">    workbook = xlrd.open_workbook(datafile)</div><div class="line">    sheet = workbook.sheet_by_index(0)</div><div class="line"></div><div class="line">    data = [[sheet.cell_value(r, col)</div><div class="line">                for col in range(sheet.ncols)]</div><div class="line">                    for r in range(sheet.nrows)]</div><div class="line"></div><div class="line">    print &quot;\nList Comprehension&quot;</div><div class="line">    print &quot;data[3][2]:&quot;,</div><div class="line">    print data[3][2]</div><div class="line"></div><div class="line">    print &quot;\nCells in a nested loop:&quot;    </div><div class="line">    for row in range(sheet.nrows):</div><div class="line">        for col in range(sheet.ncols):</div><div class="line">            if row == 50:</div><div class="line">                print sheet.cell_value(row, col),</div><div class="line"></div><div class="line"></div><div class="line">    ### other useful methods:</div><div class="line">    print &quot;\nROWS, COLUMNS, and CELLS:&quot;</div><div class="line">    print &quot;Number of rows in the sheet:&quot;,</div><div class="line">    print sheet.nrows</div><div class="line">    print &quot;Type of data in cell (row 3, col 2):&quot;,</div><div class="line">    print sheet.cell_type(3, 2)</div><div class="line">    print &quot;Value in cell (row 3, col 2):&quot;,</div><div class="line">    print sheet.cell_value(3, 2)</div><div class="line">    print &quot;Get a slice of values in column 3, from rows 1-3:&quot;</div><div class="line">    print sheet.col_values(3, start_rowx=1, end_rowx=4)</div><div class="line"></div><div class="line">    print &quot;\nDATES:&quot;</div><div class="line">    print &quot;Type of data in cell (row 1, col 0):&quot;,</div><div class="line">    print sheet.cell_type(1, 0)</div><div class="line"></div><div class="line">    exceltime = sheet.cell_value(1, 0)</div><div class="line">    print &quot;Time in Excel format:&quot;,</div><div class="line">    print exceltime</div><div class="line">    print &quot;Convert time to a Python datetime tuple, from the Excel float:&quot;,</div><div class="line">    print xlrd.xldate_as_tuple(exceltime, 0)</div><div class="line"></div><div class="line">    return data</div><div class="line"></div><div class="line">data = parse_file(datafile)</div></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">List Comprehension</div><div class="line">data[3][2]: 1036.088697</div><div class="line"></div><div class="line">Cells in a nested loop:</div><div class="line">41277.0833333 9238.73731 1438.20528 1565.442856 916.708348 14010.903488 3027.98334 6165.211119 1157.741663 37520.933404</div><div class="line">ROWS, COLUMNS, and CELLS:</div><div class="line">Number of rows in the sheet: 7296</div><div class="line">Type of data in cell (row 3, col 2): 2</div><div class="line">Value in cell (row 3, col 2): 1036.088697</div><div class="line">Get a slice of values in column 3, from rows 1-3:</div><div class="line">[1411.7505669999982, 1403.4722870000019, 1395.053150000001]</div><div class="line"></div><div class="line">DATES:</div><div class="line">Type of data in cell (row 1, col 0): 3</div><div class="line">Time in Excel format: 41275.0416667</div><div class="line">Convert time to a Python datetime tuple, from the Excel float: (2013, 1, 1, 1, 0, 0)</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -381,7 +382,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SQL/" rel="tag"># SQL</a>
+            <a href="/tags/Dara-Wrangling/" rel="tag"># Dara Wrangling</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -390,8 +393,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/14/leftjoin/" rel="next" title="Left and right join">
-                <i class="fa fa-chevron-left"></i> Left and right join
+              <a href="/2017/01/15/musicbrainz/" rel="next" title="Use musicbrainz to query JSON data">
+                <i class="fa fa-chevron-left"></i> Use musicbrainz to query JSON data
               </a>
             
           </div>
@@ -400,8 +403,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/15/Numpy-and-pandas-for-1D-data/" rel="prev" title="P2-Numpy and pandas for data">
-                P2-Numpy and pandas for data <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/15/readcsvinpython/" rel="prev" title="Import csv to python">
+                Import csv to python <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -659,9 +662,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'clarkyu';
-      var disqus_identifier = '2017/01/14/onequerynottwo/';
+      var disqus_identifier = '2017/01/15/readexcelinpython/';
 
-      var disqus_title = "Set the query as a table";
+      var disqus_title = "Import excel to python";
 
 
       function run_disqus_script(disqus_script) {

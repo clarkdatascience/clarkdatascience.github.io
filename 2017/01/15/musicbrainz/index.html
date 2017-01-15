@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SQL," />
+  <meta name="keywords" content="python,Dara Wrangling,JSON,Crawler," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
+<meta name="description" content="http://musicbrainz.org/ is a good website to learn how to get data as JSON format from a website.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Set the query as a table">
-<meta property="og:url" content="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/index.html">
+<meta property="og:title" content="Use musicbrainz to query JSON data">
+<meta property="og:url" content="https://clarkdatascience.github.io/2017/01/15/musicbrainz/index.html">
 <meta property="og:site_name" content="Notes on Data Science">
-<meta property="og:description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
-<meta property="og:updated_time" content="2017-01-14T11:40:27.555Z">
+<meta property="og:description" content="http://musicbrainz.org/ is a good website to learn how to get data as JSON format from a website.">
+<meta property="og:updated_time" content="2017-01-15T21:50:07.156Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Set the query as a table">
-<meta name="twitter:description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
+<meta name="twitter:title" content="Use musicbrainz to query JSON data">
+<meta name="twitter:description" content="http://musicbrainz.org/ is a good website to learn how to get data as JSON format from a website.">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/"/>
+  <link rel="canonical" href="https://clarkdatascience.github.io/2017/01/15/musicbrainz/"/>
 
 
 
 
 
-  <title> Set the query as a table | Notes on Data Science </title>
+  <title> Use musicbrainz to query JSON data | Notes on Data Science </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/">
+  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/15/musicbrainz/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="ClarkYu">
@@ -274,7 +274,7 @@
             
             
               
-                Set the query as a table
+                Use musicbrainz to query JSON data
               
             
           </h1>
@@ -289,8 +289,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-14T11:37:19+00:00">
-                2017-01-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-15T20:59:22+00:00">
+                2017-01-15
               </time>
             
 
@@ -312,8 +312,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SQL/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL</span>
+                  <a href="/categories/Data-Wrangling/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Wrangling</span>
                   </a>
                 </span>
 
@@ -330,8 +330,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/14/onequerynottwo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/onequerynottwo/" itemprop="commentCount"></span>
+                <a href="/2017/01/15/musicbrainz/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/15/musicbrainz/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +357,10 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># Find the players whose weight is less than the average.</div><div class="line">#</div><div class="line"># The function below performs two database queries in order to find the right players.</div><div class="line"># Refactor this code so that it performs only one query.</div><div class="line"></div><div class="line">def lightweights(cursor):</div><div class="line">    &quot;&quot;&quot;Returns a list of the players in the db whose weight is less than the average.&quot;&quot;&quot;</div><div class="line">    cursor.execute(&quot;select avg(weight) as av from players;&quot;)</div><div class="line">    av = cursor.fetchall()[0][0]  # first column of first (and only) row</div><div class="line">    cursor.execute(&quot;select name, weight from players where weight &lt; &quot; + str(av))</div><div class="line">    return cursor.fetchall()</div><div class="line"></div><div class="line"></div><div class="line">right answer:</div><div class="line"></div><div class="line">select name, weight</div><div class="line">from players, (select avg(weight) as av from players) as subq</div><div class="line">where weight &lt; av;</div></pre></td></tr></table></figure>
+        <p><a href="http://musicbrainz.org/" target="_blank" rel="external">http://musicbrainz.org/</a> is a good website to learn how to get data as JSON format from a website.</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">import json</div><div class="line">import requests</div><div class="line"></div><div class="line">BASE_URL = &quot;http://musicbrainz.org/ws/2/&quot;</div><div class="line">ARTIST_URL = BASE_URL + &quot;artist/&quot;</div><div class="line"></div><div class="line"># query parameters are given to the requests.get function as a dictionary; this</div><div class="line"># variable contains some starter parameters.</div><div class="line">query_type = {  &quot;simple&quot;: {},</div><div class="line">                &quot;atr&quot;: {&quot;inc&quot;: &quot;aliases+tags+ratings&quot;},</div><div class="line">                &quot;aliases&quot;: {&quot;inc&quot;: &quot;aliases&quot;},</div><div class="line">                &quot;releases&quot;: {&quot;inc&quot;: &quot;releases&quot;}}</div><div class="line"></div><div class="line"></div><div class="line">def query_site(url, params, uid=&quot;&quot;, fmt=&quot;json&quot;):</div><div class="line">    # This is the main function for making queries to the musicbrainz API.</div><div class="line">    # A json document should be returned by the query.</div><div class="line">    params[&quot;fmt&quot;] = fmt</div><div class="line">    r = requests.get(url + uid, params=params)</div><div class="line">    print &quot;requesting&quot;, r.url</div><div class="line"></div><div class="line">    if r.status_code == requests.codes.ok:</div><div class="line">        return r.json()</div><div class="line">    else:</div><div class="line">        r.raise_for_status()</div><div class="line"></div><div class="line"></div><div class="line">def query_by_name(url, params, name):</div><div class="line">    # This adds an artist name to the query parameters before making</div><div class="line">    # an API call to the function above.</div><div class="line">    params[&quot;query&quot;] = &quot;artist:&quot; + name</div><div class="line">    return query_site(url, params)</div></pre></td></tr></table></figure>
+<p>For example, if we need to know how many bands named &#x201C;First Aid Kit&#x201D;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># how many bands named &quot;First Aid Kit&quot;</div><div class="line">def main():</div><div class="line">    results = query_by_name(ARTIST_URL, query_type[&quot;simple&quot;], &quot;FIRST AID KID&quot;)</div><div class="line">    for i in range(0,len(results[&quot;artists&quot;])):</div><div class="line">        if results[&quot;artists&quot;][i][&quot;name&quot;] == &quot;First Aid Kit&quot;:</div><div class="line">            print results[&quot;artists&quot;][i][&quot;name&quot;]</div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">    main()</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -381,7 +384,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SQL/" rel="tag"># SQL</a>
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/Dara-Wrangling/" rel="tag"># Dara Wrangling</a>
+          
+            <a href="/tags/JSON/" rel="tag"># JSON</a>
+          
+            <a href="/tags/Crawler/" rel="tag"># Crawler</a>
           
         </div>
       
@@ -390,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/14/leftjoin/" rel="next" title="Left and right join">
-                <i class="fa fa-chevron-left"></i> Left and right join
+              <a href="/2017/01/15/Numpy-and-pandas-for-2D-data/" rel="next" title="P2-Numpy and pandas for 2D data">
+                <i class="fa fa-chevron-left"></i> P2-Numpy and pandas for 2D data
               </a>
             
           </div>
@@ -400,8 +409,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/15/Numpy-and-pandas-for-1D-data/" rel="prev" title="P2-Numpy and pandas for data">
-                P2-Numpy and pandas for data <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/15/readexcelinpython/" rel="prev" title="Import excel to python">
+                Import excel to python <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -659,9 +668,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'clarkyu';
-      var disqus_identifier = '2017/01/14/onequerynottwo/';
+      var disqus_identifier = '2017/01/15/musicbrainz/';
 
-      var disqus_title = "Set the query as a table";
+      var disqus_title = "Use musicbrainz to query JSON data";
 
 
       function run_disqus_script(disqus_script) {

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SQL," />
+  <meta name="keywords" content="Dara Wrangling,Python," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
+<meta name="description" content="Read CSV file123456789101112131415161718192021import osDATADIR = &amp;quot;&amp;quot;DATAFILE = &amp;quot;example.csv&amp;quot; #for exampledef parse_file(datafile):    data = []    with open(datafile, &amp;quot;rb&amp;quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Set the query as a table">
-<meta property="og:url" content="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/index.html">
+<meta property="og:title" content="Import csv to python">
+<meta property="og:url" content="https://clarkdatascience.github.io/2017/01/15/readcsvinpython/index.html">
 <meta property="og:site_name" content="Notes on Data Science">
-<meta property="og:description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
-<meta property="og:updated_time" content="2017-01-14T11:40:27.555Z">
+<meta property="og:description" content="Read CSV file123456789101112131415161718192021import osDATADIR = &amp;quot;&amp;quot;DATAFILE = &amp;quot;example.csv&amp;quot; #for exampledef parse_file(datafile):    data = []    with open(datafile, &amp;quot;rb&amp;quot;">
+<meta property="og:updated_time" content="2017-01-15T21:51:07.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Set the query as a table">
-<meta name="twitter:description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
+<meta name="twitter:title" content="Import csv to python">
+<meta name="twitter:description" content="Read CSV file123456789101112131415161718192021import osDATADIR = &amp;quot;&amp;quot;DATAFILE = &amp;quot;example.csv&amp;quot; #for exampledef parse_file(datafile):    data = []    with open(datafile, &amp;quot;rb&amp;quot;">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/"/>
+  <link rel="canonical" href="https://clarkdatascience.github.io/2017/01/15/readcsvinpython/"/>
 
 
 
 
 
-  <title> Set the query as a table | Notes on Data Science </title>
+  <title> Import csv to python | Notes on Data Science </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/">
+  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/15/readcsvinpython/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="ClarkYu">
@@ -274,7 +274,7 @@
             
             
               
-                Set the query as a table
+                Import csv to python
               
             
           </h1>
@@ -289,8 +289,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-14T11:37:19+00:00">
-                2017-01-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-15T20:59:22+00:00">
+                2017-01-15
               </time>
             
 
@@ -312,8 +312,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SQL/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL</span>
+                  <a href="/categories/Data-Wrangling/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Wrangling</span>
                   </a>
                 </span>
 
@@ -330,8 +330,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/14/onequerynottwo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/onequerynottwo/" itemprop="commentCount"></span>
+                <a href="/2017/01/15/readcsvinpython/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/15/readcsvinpython/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +357,10 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># Find the players whose weight is less than the average.</div><div class="line">#</div><div class="line"># The function below performs two database queries in order to find the right players.</div><div class="line"># Refactor this code so that it performs only one query.</div><div class="line"></div><div class="line">def lightweights(cursor):</div><div class="line">    &quot;&quot;&quot;Returns a list of the players in the db whose weight is less than the average.&quot;&quot;&quot;</div><div class="line">    cursor.execute(&quot;select avg(weight) as av from players;&quot;)</div><div class="line">    av = cursor.fetchall()[0][0]  # first column of first (and only) row</div><div class="line">    cursor.execute(&quot;select name, weight from players where weight &lt; &quot; + str(av))</div><div class="line">    return cursor.fetchall()</div><div class="line"></div><div class="line"></div><div class="line">right answer:</div><div class="line"></div><div class="line">select name, weight</div><div class="line">from players, (select avg(weight) as av from players) as subq</div><div class="line">where weight &lt; av;</div></pre></td></tr></table></figure>
+        <h2 id="Read-CSV-file"><a href="#Read-CSV-file" class="headerlink" title="Read CSV file"></a>Read CSV file</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line">DATADIR = <span class="string">&quot;&quot;</span></div><div class="line">DATAFILE = <span class="string">&quot;example.csv&quot;</span> <span class="comment">#for example</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_file</span><span class="params">(datafile)</span>:</span></div><div class="line">    data = []</div><div class="line">    <span class="keyword">with</span> open(datafile, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> f:</div><div class="line">        header = f.readline().split(<span class="string">&apos;,&apos;</span>)</div><div class="line">        counter = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f:</div><div class="line">            <span class="keyword">if</span> counter == <span class="number">10</span>: <span class="comment"># if we only want to reader first ten row</span></div><div class="line">                <span class="keyword">break</span></div><div class="line">            fields = line.split(<span class="string">&apos;,&apos;</span>)</div><div class="line">            entry = {}          </div><div class="line">            <span class="keyword">for</span> i, value <span class="keyword">in</span> enumerate(fields):</div><div class="line">                entry[header[i].strip()] = value.strip()  <span class="comment">#removed [chars] from beginning or end of the string.</span></div><div class="line">            data.append(entry)</div><div class="line">            counter +=<span class="number">1</span></div><div class="line">    <span class="keyword">return</span> data</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Use-CSV-module-to-read"><a href="#Use-CSV-module-to-read" class="headerlink" title="Use CSV module to read"></a>Use CSV module to read</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">import os</div><div class="line">import pprint</div><div class="line">import csv</div><div class="line"></div><div class="line">DATADIR =&quot;&quot;</div><div class="line">DATAFILE = &quot;example.csv&quot;</div><div class="line"></div><div class="line">def parse_csv(datafile):</div><div class="line">    data = []</div><div class="line">    n = 0</div><div class="line">    with open(datafile,&apos;rb&apos;) as sd:</div><div class="line">        r = csv.DictReader(sd)</div><div class="line">        for line in r:</div><div class="line">            data.append(line)</div><div class="line">    return data</div><div class="line"></div><div class="line">parse_csv(DATAFILE)</div></pre></td></tr></table></figure>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">def parse_file(datafile):</div><div class="line">    data = []</div><div class="line">    with open(datafile,&apos;rb&apos;) as f:</div><div class="line">        reader = csv.reader(f)</div><div class="line">        name = reader.next()[1] #read the element in position 1.</div><div class="line">        reader.next() #read the next element, while nothing happen. Actually, this function makes csvreader skip the second element.</div><div class="line">        for row in reader: #for loop, actually from the third element</div><div class="line">            data.append(row)</div><div class="line">        print data</div><div class="line">    return (name, data)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -381,7 +384,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SQL/" rel="tag"># SQL</a>
+            <a href="/tags/Dara-Wrangling/" rel="tag"># Dara Wrangling</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -390,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/14/leftjoin/" rel="next" title="Left and right join">
-                <i class="fa fa-chevron-left"></i> Left and right join
+              <a href="/2017/01/15/readexcelinpython/" rel="next" title="Import excel to python">
+                <i class="fa fa-chevron-left"></i> Import excel to python
               </a>
             
           </div>
@@ -399,10 +404,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/15/Numpy-and-pandas-for-1D-data/" rel="prev" title="P2-Numpy and pandas for data">
-                P2-Numpy and pandas for data <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -456,8 +457,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -533,6 +543,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Read-CSV-file"><span class="nav-number">1.</span> <span class="nav-text">Read CSV file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-CSV-module-to-read"><span class="nav-number">2.</span> <span class="nav-text">Use CSV module to read</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -659,9 +685,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'clarkyu';
-      var disqus_identifier = '2017/01/14/onequerynottwo/';
+      var disqus_identifier = '2017/01/15/readcsvinpython/';
 
-      var disqus_title = "Set the query as a table";
+      var disqus_title = "Import csv to python";
 
 
       function run_disqus_script(disqus_script) {

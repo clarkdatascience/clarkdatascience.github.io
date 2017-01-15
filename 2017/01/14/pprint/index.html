@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SQL," />
+  <meta name="keywords" content="skill," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
+<meta name="description" content="1234567def pretty_print(data, indent=4):    # After we get our output, we can format it to be more readable    # by using this function.    if type(data) == dict:        print json.dumps(data, indent=">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Set the query as a table">
-<meta property="og:url" content="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/index.html">
+<meta property="og:title" content="Make your outputs more readable">
+<meta property="og:url" content="https://clarkdatascience.github.io/2017/01/14/pprint/index.html">
 <meta property="og:site_name" content="Notes on Data Science">
-<meta property="og:description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
-<meta property="og:updated_time" content="2017-01-14T11:40:27.555Z">
+<meta property="og:description" content="1234567def pretty_print(data, indent=4):    # After we get our output, we can format it to be more readable    # by using this function.    if type(data) == dict:        print json.dumps(data, indent=">
+<meta property="og:updated_time" content="2017-01-15T21:51:12.243Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Set the query as a table">
-<meta name="twitter:description" content="123456789101112131415161718# Find the players whose weight is less than the average.## The function below performs two database queries in order to find the right players.# Refactor this code so that">
+<meta name="twitter:title" content="Make your outputs more readable">
+<meta name="twitter:description" content="1234567def pretty_print(data, indent=4):    # After we get our output, we can format it to be more readable    # by using this function.    if type(data) == dict:        print json.dumps(data, indent=">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/"/>
+  <link rel="canonical" href="https://clarkdatascience.github.io/2017/01/14/pprint/"/>
 
 
 
 
 
-  <title> Set the query as a table | Notes on Data Science </title>
+  <title> Make your outputs more readable | Notes on Data Science </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/">
+  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/14/pprint/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="ClarkYu">
@@ -274,7 +274,7 @@
             
             
               
-                Set the query as a table
+                Make your outputs more readable
               
             
           </h1>
@@ -289,7 +289,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-14T11:37:19+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-14T10:40:32+00:00">
                 2017-01-14
               </time>
             
@@ -312,8 +312,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SQL/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -330,8 +330,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/14/onequerynottwo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/onequerynottwo/" itemprop="commentCount"></span>
+                <a href="/2017/01/14/pprint/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/pprint/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +357,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># Find the players whose weight is less than the average.</div><div class="line">#</div><div class="line"># The function below performs two database queries in order to find the right players.</div><div class="line"># Refactor this code so that it performs only one query.</div><div class="line"></div><div class="line">def lightweights(cursor):</div><div class="line">    &quot;&quot;&quot;Returns a list of the players in the db whose weight is less than the average.&quot;&quot;&quot;</div><div class="line">    cursor.execute(&quot;select avg(weight) as av from players;&quot;)</div><div class="line">    av = cursor.fetchall()[0][0]  # first column of first (and only) row</div><div class="line">    cursor.execute(&quot;select name, weight from players where weight &lt; &quot; + str(av))</div><div class="line">    return cursor.fetchall()</div><div class="line"></div><div class="line"></div><div class="line">right answer:</div><div class="line"></div><div class="line">select name, weight</div><div class="line">from players, (select avg(weight) as av from players) as subq</div><div class="line">where weight &lt; av;</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def pretty_print(data, indent=4):</div><div class="line">    # After we get our output, we can format it to be more readable</div><div class="line">    # by using this function.</div><div class="line">    if type(data) == dict:</div><div class="line">        print json.dumps(data, indent=indent, sort_keys=True)</div><div class="line">    else:</div><div class="line">        print data</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -381,7 +381,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SQL/" rel="tag"># SQL</a>
+            <a href="/tags/skill/" rel="tag"># skill</a>
           
         </div>
       
@@ -390,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/14/leftjoin/" rel="next" title="Left and right join">
-                <i class="fa fa-chevron-left"></i> Left and right join
+              <a href="/2017/01/13/titanic-report/" rel="next" title="Titanic Analysis report">
+                <i class="fa fa-chevron-left"></i> Titanic Analysis report
               </a>
             
           </div>
@@ -400,8 +400,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/15/Numpy-and-pandas-for-1D-data/" rel="prev" title="P2-Numpy and pandas for data">
-                P2-Numpy and pandas for data <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/14/leftjoin/" rel="prev" title="Left and right join">
+                Left and right join <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -659,9 +659,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'clarkyu';
-      var disqus_identifier = '2017/01/14/onequerynottwo/';
+      var disqus_identifier = '2017/01/14/pprint/';
 
-      var disqus_title = "Set the query as a table";
+      var disqus_title = "Make your outputs more readable";
 
 
       function run_disqus_script(disqus_script) {
