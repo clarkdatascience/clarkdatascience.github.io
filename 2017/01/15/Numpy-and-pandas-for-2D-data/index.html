@@ -1,0 +1,838 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="numpy,pandas," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="123456789101112131415161718import numpy as npimport seaborn%pylab inline# Subway ridership for 5 stations on 10 different daysridership = np.array([    [   0,    0,    2,    5,    0],    [1478, 3877,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Numpy and pandas for 2D data">
+<meta property="og:url" content="https://clarkdatascience.github.io/2017/01/15/Numpy-and-pandas-for-2D-data/index.html">
+<meta property="og:site_name" content="Notes on Data Science">
+<meta property="og:description" content="123456789101112131415161718import numpy as npimport seaborn%pylab inline# Subway ridership for 5 stations on 10 different daysridership = np.array([    [   0,    0,    2,    5,    0],    [1478, 3877,">
+<meta property="og:updated_time" content="2017-01-15T20:17:19.281Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Numpy and pandas for 2D data">
+<meta name="twitter:description" content="123456789101112131415161718import numpy as npimport seaborn%pylab inline# Subway ridership for 5 stations on 10 different daysridership = np.array([    [   0,    0,    2,    5,    0],    [1478, 3877,">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://clarkdatascience.github.io/2017/01/15/Numpy-and-pandas-for-2D-data/"/>
+
+
+
+
+
+  <title> Numpy and pandas for 2D data | Notes on Data Science </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Notes on Data Science</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-folder"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/15/Numpy-and-pandas-for-2D-data/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="ClarkYu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Notes on Data Science">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Notes on Data Science" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Numpy and pandas for 2D data
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-15T20:15:24+00:00">
+                2017-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/numpy/" itemprop="url" rel="index">
+                    <span itemprop="name">numpy</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/numpy/pandas/" itemprop="url" rel="index">
+                    <span itemprop="name">pandas</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/numpy/pandas/Udacity/" itemprop="url" rel="index">
+                    <span itemprop="name">Udacity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/15/Numpy-and-pandas-for-2D-data/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/15/Numpy-and-pandas-for-2D-data/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> seaborn</div><div class="line">%pylab inline</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Subway ridership for 5 stations on 10 different days</span></div><div class="line">ridership = np.array([</div><div class="line">    [   <span class="number">0</span>,    <span class="number">0</span>,    <span class="number">2</span>,    <span class="number">5</span>,    <span class="number">0</span>],</div><div class="line">    [<span class="number">1478</span>, <span class="number">3877</span>, <span class="number">3674</span>, <span class="number">2328</span>, <span class="number">2539</span>],</div><div class="line">    [<span class="number">1613</span>, <span class="number">4088</span>, <span class="number">3991</span>, <span class="number">6461</span>, <span class="number">2691</span>],</div><div class="line">    [<span class="number">1560</span>, <span class="number">3392</span>, <span class="number">3826</span>, <span class="number">4787</span>, <span class="number">2613</span>],</div><div class="line">    [<span class="number">1608</span>, <span class="number">4802</span>, <span class="number">3932</span>, <span class="number">4477</span>, <span class="number">2705</span>],</div><div class="line">    [<span class="number">1576</span>, <span class="number">3933</span>, <span class="number">3909</span>, <span class="number">4979</span>, <span class="number">2685</span>],</div><div class="line">    [  <span class="number">95</span>,  <span class="number">229</span>,  <span class="number">255</span>,  <span class="number">496</span>,  <span class="number">201</span>],</div><div class="line">    [   <span class="number">2</span>,    <span class="number">0</span>,    <span class="number">1</span>,   <span class="number">27</span>,    <span class="number">0</span>],</div><div class="line">    [<span class="number">1438</span>, <span class="number">3785</span>, <span class="number">3589</span>, <span class="number">4174</span>, <span class="number">2215</span>],</div><div class="line">    [<span class="number">1342</span>, <span class="number">4043</span>, <span class="number">4009</span>, <span class="number">4665</span>, <span class="number">3033</span>]</div><div class="line">])</div></pre></td></tr></table></figure>
+<pre><code>Populating the interactive namespace from numpy and matplotlib
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Accessing elements</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">print</span> ridership[<span class="number">1</span>, <span class="number">3</span>]</div><div class="line">    <span class="keyword">print</span> ridership[<span class="number">1</span>:<span class="number">3</span>, <span class="number">3</span>:<span class="number">5</span>]</div><div class="line">    <span class="keyword">print</span> ridership[<span class="number">1</span>, :]</div></pre></td></tr></table></figure>
+<pre><code>2328
+[[2328 2539]
+ [6461 2691]]
+[1478 3877 3674 2328 2539]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Vectorized operations on rows or columns</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">print</span> ridership[<span class="number">0</span>, :] + ridership[<span class="number">1</span>, :]</div><div class="line">    <span class="keyword">print</span> ridership[:, <span class="number">0</span>] + ridership[:, <span class="number">1</span>] <span class="comment">#&#x6700;&#x540E;&#x53D8;&#x6210;&#x4E00;&#x7EC4;&#x6A2A;&#x7684;&#x6570;&#x5217;</span></div></pre></td></tr></table></figure>
+<pre><code>[1478 3877 3676 2333 2539]
+[   0 5355 5701 4952 6410 5509  324    2 5223 5385]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Vectorized operations on entire arrays</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</div><div class="line">    a = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</div><div class="line">    b = np.array([[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>]])</div><div class="line">    <span class="keyword">print</span> a + b</div></pre></td></tr></table></figure>
+<pre><code>Populating the interactive namespace from numpy and matplotlib
+[[ 2  3  4]
+ [ 6  7  8]
+ [10 11 12]]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mean_riders_for_max_station</span><span class="params">(ridership)</span>:</span></div><div class="line">    <span class="string">&apos;&apos;&apos;</span></div><div class="line">    Fill in this function to find the station with the maximum riders on the</div><div class="line">    first day, then return the mean riders per day for that station. Also</div><div class="line">    return the mean ridership overall for comparsion.</div><div class="line"></div><div class="line">    Hint: NumPy&apos;s argmax() function might be useful:</div><div class="line">    http://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    max_pos = ridership[<span class="number">0</span>,:].argmax()</div><div class="line">    overall_mean =  ridership.mean()</div><div class="line">    mean_for_max = ridership[:, max_pos].mean()</div><div class="line"></div><div class="line">    <span class="keyword">return</span> (overall_mean, mean_for_max)</div><div class="line"></div><div class="line"><span class="keyword">print</span> mean_riders_for_max_station(ridership)</div></pre></td></tr></table></figure>
+<pre><code>(2342.5999999999999, 3239.9000000000001)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># NumPy axis argument</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</div><div class="line">    a = np.array([</div><div class="line">        [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line">        [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</div><div class="line">        [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</div><div class="line">    ])</div><div class="line"></div><div class="line">    <span class="keyword">print</span> a.sum()</div><div class="line">    <span class="keyword">print</span> a.sum(axis=<span class="number">0</span>) <span class="comment">#&#x7EB5;&#x8F74;&#x76F8;&#x52A0;</span></div><div class="line">    <span class="keyword">print</span> a.sum(axis=<span class="number">1</span>) <span class="comment">#&#x6A2A;&#x8F74;&#x76F8;&#x52A0;</span></div></pre></td></tr></table></figure>
+<pre><code>45
+[12 15 18]
+[ 6 15 24]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">min_and_max_riders_per_day</span><span class="params">(ridership)</span>:</span></div><div class="line">    <span class="string">&apos;&apos;&apos;</span></div><div class="line">    Fill in this function. First, for each subway station, calculate the</div><div class="line">    mean ridership per day. Then, out of all the subway stations, return the</div><div class="line">    maximum and minimum of these values. That is, find the maximum</div><div class="line">    mean-ridership-per-day and the minimum mean-ridership-per-day for any</div><div class="line">    subway station.</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    mean_ridership_per_station = ridership.mean(axis=<span class="number">0</span>)</div><div class="line">    max_daily_ridership = mean_ridership_per_station.max()</div><div class="line">    min_daily_ridership = mean_ridership_per_station.min()  </div><div class="line"></div><div class="line">    <span class="keyword">return</span> (max_daily_ridership, min_daily_ridership)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">min_and_max_riders_per_day(ridership)</div></pre></td></tr></table></figure>
+<pre><code>(3239.9000000000001, 1071.2)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="comment"># Subway ridership for 5 stations on 10 different days</span></div><div class="line">ridership_df = pd.DataFrame(</div><div class="line">    data=[[   <span class="number">0</span>,    <span class="number">0</span>,    <span class="number">2</span>,    <span class="number">5</span>,    <span class="number">0</span>],</div><div class="line">          [<span class="number">1478</span>, <span class="number">3877</span>, <span class="number">3674</span>, <span class="number">2328</span>, <span class="number">2539</span>],</div><div class="line">          [<span class="number">1613</span>, <span class="number">4088</span>, <span class="number">3991</span>, <span class="number">6461</span>, <span class="number">2691</span>],</div><div class="line">          [<span class="number">1560</span>, <span class="number">3392</span>, <span class="number">3826</span>, <span class="number">4787</span>, <span class="number">2613</span>],</div><div class="line">          [<span class="number">1608</span>, <span class="number">4802</span>, <span class="number">3932</span>, <span class="number">4477</span>, <span class="number">2705</span>],</div><div class="line">          [<span class="number">1576</span>, <span class="number">3933</span>, <span class="number">3909</span>, <span class="number">4979</span>, <span class="number">2685</span>],</div><div class="line">          [  <span class="number">95</span>,  <span class="number">229</span>,  <span class="number">255</span>,  <span class="number">496</span>,  <span class="number">201</span>],</div><div class="line">          [   <span class="number">2</span>,    <span class="number">0</span>,    <span class="number">1</span>,   <span class="number">27</span>,    <span class="number">0</span>],</div><div class="line">          [<span class="number">1438</span>, <span class="number">3785</span>, <span class="number">3589</span>, <span class="number">4174</span>, <span class="number">2215</span>],</div><div class="line">          [<span class="number">1342</span>, <span class="number">4043</span>, <span class="number">4009</span>, <span class="number">4665</span>, <span class="number">3033</span>]],</div><div class="line">    index=[<span class="string">&apos;05-01-11&apos;</span>, <span class="string">&apos;05-02-11&apos;</span>, <span class="string">&apos;05-03-11&apos;</span>, <span class="string">&apos;05-04-11&apos;</span>, <span class="string">&apos;05-05-11&apos;</span>,</div><div class="line">           <span class="string">&apos;05-06-11&apos;</span>, <span class="string">&apos;05-07-11&apos;</span>, <span class="string">&apos;05-08-11&apos;</span>, <span class="string">&apos;05-09-11&apos;</span>, <span class="string">&apos;05-10-11&apos;</span>],</div><div class="line">    columns=[<span class="string">&apos;R003&apos;</span>, <span class="string">&apos;R004&apos;</span>, <span class="string">&apos;R005&apos;</span>, <span class="string">&apos;R006&apos;</span>, <span class="string">&apos;R007&apos;</span>]</div><div class="line">)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ridership_df.mean()</div></pre></td></tr></table></figure>
+<pre><code>R003    1071.2
+R004    2814.9
+R005    2718.8
+R006    3239.9
+R007    1868.2
+dtype: float64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ridership_df.values.mean()  <span class="comment">#!!!&#x6CE8;&#x610F;&#x4E86;&#xFF01;&#x8FD9;&#x91CC;&#x7684;values&#x540E;&#x9762;&#x662F;&#x6CA1;&#x6709;&#xFF08;&#xFF09;&#x7684;&#xFF01;&#xFF01;&#xFF01;&#x6240;&#x6709;&#x7684;&#x52A0;&#x8D77;&#x6765; &#x5176;&#x5B9E;&#x5C31;&#x662F;ridership_df.mean().mean()</span></div></pre></td></tr></table></figure>
+<pre><code>2342.5999999999999
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Change False to True for each block of code to see what it does</span></div><div class="line"></div><div class="line"><span class="comment"># DataFrame creation</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</div><div class="line">    <span class="comment"># You can create a DataFrame out of a dictionary mapping column names to values</span></div><div class="line">    df_1 = pd.DataFrame({<span class="string">&apos;A&apos;</span>: [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>], <span class="string">&apos;B&apos;</span>: [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]})</div><div class="line">    <span class="keyword">print</span> df_1</div><div class="line"></div><div class="line">    <span class="comment"># You can also use a list of lists or a 2D NumPy array</span></div><div class="line">    df_2 = pd.DataFrame([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]], columns=[<span class="string">&apos;A&apos;</span>, <span class="string">&apos;B&apos;</span>, <span class="string">&apos;C&apos;</span>])</div><div class="line">    <span class="keyword">print</span> df_2</div></pre></td></tr></table></figure>
+<pre><code>   A  B
+0  0  3
+1  1  4
+2  2  5
+   A  B  C
+0  0  1  2
+1  3  4  5
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ridership_df</div></pre></td></tr></table></figure>
+<div><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>R003</th><br>      <th>R004</th><br>      <th>R005</th><br>      <th>R006</th><br>      <th>R007</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>05-01-11</th><br>      <td>0</td><br>      <td>0</td><br>      <td>2</td><br>      <td>5</td><br>      <td>0</td><br>    </tr><br>    <tr><br>      <th>05-02-11</th><br>      <td>1478</td><br>      <td>3877</td><br>      <td>3674</td><br>      <td>2328</td><br>      <td>2539</td><br>    </tr><br>    <tr><br>      <th>05-03-11</th><br>      <td>1613</td><br>      <td>4088</td><br>      <td>3991</td><br>      <td>6461</td><br>      <td>2691</td><br>    </tr><br>    <tr><br>      <th>05-04-11</th><br>      <td>1560</td><br>      <td>3392</td><br>      <td>3826</td><br>      <td>4787</td><br>      <td>2613</td><br>    </tr><br>    <tr><br>      <th>05-05-11</th><br>      <td>1608</td><br>      <td>4802</td><br>      <td>3932</td><br>      <td>4477</td><br>      <td>2705</td><br>    </tr><br>    <tr><br>      <th>05-06-11</th><br>      <td>1576</td><br>      <td>3933</td><br>      <td>3909</td><br>      <td>4979</td><br>      <td>2685</td><br>    </tr><br>    <tr><br>      <th>05-07-11</th><br>      <td>95</td><br>      <td>229</td><br>      <td>255</td><br>      <td>496</td><br>      <td>201</td><br>    </tr><br>    <tr><br>      <th>05-08-11</th><br>      <td>2</td><br>      <td>0</td><br>      <td>1</td><br>      <td>27</td><br>      <td>0</td><br>    </tr><br>    <tr><br>      <th>05-09-11</th><br>      <td>1438</td><br>      <td>3785</td><br>      <td>3589</td><br>      <td>4174</td><br>      <td>2215</td><br>    </tr><br>    <tr><br>      <th>05-10-11</th><br>      <td>1342</td><br>      <td>4043</td><br>      <td>4009</td><br>      <td>4665</td><br>      <td>3033</td><br>    </tr><br>  </tbody><br></table><br></div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Accessing elements</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">print</span> ridership_df.iloc[<span class="number">0</span>] <span class="comment">#iol&#x6307;&#x5B9A;&#x76F8;&#x5E94;&#x7684;row</span></div><div class="line">    <span class="keyword">print</span> ridership_df.loc[<span class="string">&apos;05-05-11&apos;</span>] <span class="comment">#&#x6307;&#x5B9A;&#x76F8;&#x5E94;&#x7684;row&#xFF0C;&#x7D22;&#x5F15;&#x7684;&#x662F;&#x5B57;&#x7B26;&#x884C;</span></div><div class="line">    <span class="keyword">print</span> ridership_df[<span class="string">&apos;R003&apos;</span>]</div><div class="line">    <span class="keyword">print</span> ridership_df.iloc[<span class="number">1</span>, <span class="number">3</span>] <span class="comment">#row, column</span></div></pre></td></tr></table></figure>
+<pre><code>R003    0
+R004    0
+R005    2
+R006    5
+R007    0
+Name: 05-01-11, dtype: int64
+R003    1608
+R004    4802
+R005    3932
+R006    4477
+R007    2705
+Name: 05-05-11, dtype: int64
+05-01-11       0
+05-02-11    1478
+05-03-11    1613
+05-04-11    1560
+05-05-11    1608
+05-06-11    1576
+05-07-11      95
+05-08-11       2
+05-09-11    1438
+05-10-11    1342
+Name: R003, dtype: int64
+2328
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Accessing multiple rows</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">print</span> ridership_df.iloc[<span class="number">1</span>:<span class="number">4</span>]</div><div class="line"></div><div class="line"><span class="comment"># Accessing multiple columns</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">print</span> ridership_df[[<span class="string">&apos;R003&apos;</span>, <span class="string">&apos;R005&apos;</span>]]</div></pre></td></tr></table></figure>
+<pre><code>          R003  R004  R005  R006  R007
+05-02-11  1478  3877  3674  2328  2539
+05-03-11  1613  4088  3991  6461  2691
+05-04-11  1560  3392  3826  4787  2613
+          R003  R005
+05-01-11     0     2
+05-02-11  1478  3674
+05-03-11  1613  3991
+05-04-11  1560  3826
+05-05-11  1608  3932
+05-06-11  1576  3909
+05-07-11    95   255
+05-08-11     2     1
+05-09-11  1438  3589
+05-10-11  1342  4009
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Pandas axis</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</div><div class="line">    df = pd.DataFrame({<span class="string">&apos;A&apos;</span>: [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>], <span class="string">&apos;B&apos;</span>: [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]})</div><div class="line"></div><div class="line">df</div></pre></td></tr></table></figure>
+<div><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>A</th><br>      <th>B</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>0</th><br>      <td>0</td><br>      <td>3</td><br>    </tr><br>    <tr><br>      <th>1</th><br>      <td>1</td><br>      <td>4</td><br>    </tr><br>    <tr><br>      <th>2</th><br>      <td>2</td><br>      <td>5</td><br>    </tr><br>  </tbody><br></table><br></div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Pandas axis</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</div><div class="line">    df = pd.DataFrame({<span class="string">&apos;A&apos;</span>: [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>], <span class="string">&apos;B&apos;</span>: [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]})</div><div class="line">    <span class="keyword">print</span> df.sum() <span class="comment">#&#x9ED8;&#x8BA4;&#x662F;axis=0&#xFF0C;&#x6309;&#x7167;column&#x6765;&#x7EDF;&#x8BA1;&#xFF0C;&#x7EB5;&#x5411;&#x6C42;&#x548C;</span></div><div class="line">    <span class="keyword">print</span> df.sum(axis=<span class="number">1</span>) <span class="comment">#&#x6A2A;&#x7EBF;&#x6C42;&#x548C;</span></div><div class="line">    <span class="keyword">print</span> df.values.sum()<span class="comment">#&#x6240;&#x6709;cell&#x4E00;&#x8D77;&#x6C42;&#x548C;</span></div></pre></td></tr></table></figure>
+<pre><code>A     3
+B    12
+dtype: int64
+0    3
+1    5
+2    7
+dtype: int64
+15
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mean_riders_for_max_station</span><span class="params">(ridership)</span>:</span></div><div class="line">    <span class="string">&apos;&apos;&apos;</span></div><div class="line">    Fill in this function to find the station with the maximum riders on the</div><div class="line">    first day, then return the mean riders per day for that station. Also</div><div class="line">    return the mean ridership overall for comparsion.</div><div class="line"></div><div class="line">    This is the same as a previous exercise, but this time the</div><div class="line">    input is a Pandas DataFrame rather than a 2D NumPy array.</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    overall_mean = ridership.values.mean()</div><div class="line">    mean_for_max = ridership[ridership.iloc[<span class="number">0</span>].argmax()].mean()</div><div class="line"></div><div class="line">    <span class="keyword">return</span> (overall_mean, mean_for_max)</div><div class="line"></div><div class="line"><span class="keyword">print</span> (mean_riders_for_max_station(ridership_df)</div></pre></td></tr></table></figure>
+<pre><code>  File &quot;&lt;ipython-input-36-81a2a5aaefcc&gt;&quot;, line 15
+    print (mean_riders_for_max_station(ridership_df)
+                                                    ^
+SyntaxError: invalid syntax
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/numpy/" rel="tag"># numpy</a>
+          
+            <a href="/tags/pandas/" rel="tag"># pandas</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/15/Numpy-and-pandas-for-1D-data/" rel="next" title="Numpy and pandas for data">
+                <i class="fa fa-chevron-left"></i> Numpy and pandas for data
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="ClarkYu" />
+          <p class="site-author-name" itemprop="name">ClarkYu</p>
+          <p class="site-description motion-element" itemprop="description">Keep thinking and writing!</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/clarkyu2016" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/chijingclark" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ClarkYu</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'clarkyu';
+      var disqus_identifier = '2017/01/15/Numpy-and-pandas-for-2D-data/';
+
+      var disqus_title = "Numpy and pandas for 2D data";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
