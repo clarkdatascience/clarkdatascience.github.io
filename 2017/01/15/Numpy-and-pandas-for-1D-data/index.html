@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="Keep thinking and writing!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Notes on Data Science">
-<meta property="og:url" content="https://clarkdatascience.github.io/index.html">
+<meta name="description" content="&amp;#x5BFC;&amp;#x5165;numpy&amp;#x5E93;12345678910111213141516171819import numpy as np# First 20 countries with employment datacountries = np.array([    &amp;apos;Afghanistan&amp;apos;, &amp;apos;Albania&amp;apos;, &amp;apos;Alger">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Numpy and pandas for data">
+<meta property="og:url" content="https://clarkdatascience.github.io/2017/01/15/Numpy-and-pandas-for-1D-data/index.html">
 <meta property="og:site_name" content="Notes on Data Science">
-<meta property="og:description" content="Keep thinking and writing!">
+<meta property="og:description" content="&amp;#x5BFC;&amp;#x5165;numpy&amp;#x5E93;12345678910111213141516171819import numpy as np# First 20 countries with employment datacountries = np.array([    &amp;apos;Afghanistan&amp;apos;, &amp;apos;Albania&amp;apos;, &amp;apos;Alger">
+<meta property="og:image" content="https://clarkdatascience.github.io/2017/01/15/Numpy-and-pandas-for-1D-data/output_53_1.png">
+<meta property="og:image" content="https://clarkdatascience.github.io/2017/01/15/Numpy-and-pandas-for-1D-data/output_54_1.png">
+<meta property="og:updated_time" content="2017-01-15T20:12:48.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Notes on Data Science">
-<meta name="twitter:description" content="Keep thinking and writing!">
+<meta name="twitter:title" content="Numpy and pandas for data">
+<meta name="twitter:description" content="&amp;#x5BFC;&amp;#x5165;numpy&amp;#x5E93;12345678910111213141516171819import numpy as np# First 20 countries with employment datacountries = np.array([    &amp;apos;Afghanistan&amp;apos;, &amp;apos;Albania&amp;apos;, &amp;apos;Alger">
+<meta name="twitter:image" content="https://clarkdatascience.github.io/2017/01/15/Numpy-and-pandas-for-1D-data/output_53_1.png">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://clarkdatascience.github.io/"/>
+  <link rel="canonical" href="https://clarkdatascience.github.io/2017/01/15/Numpy-and-pandas-for-1D-data/"/>
 
 
 
 
 
-  <title> Notes on Data Science </title>
+  <title> Numpy and pandas for data | Notes on Data Science </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -147,9 +151,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,9 +242,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -275,10 +277,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/01/15/Numpy-and-pandas-for-1D-data/" itemprop="url">
-                  Numpy and pandas for data
-                </a>
+                Numpy and pandas for data
               
             
           </h1>
@@ -339,9 +338,7 @@
       
 
       
-        
-          
-            <h1 id="&#x5BFC;&#x5165;numpy&#x5E93;"><a href="#&#x5BFC;&#x5165;numpy&#x5E93;" class="headerlink" title="&#x5BFC;&#x5165;numpy&#x5E93;"></a>&#x5BFC;&#x5165;numpy&#x5E93;</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="comment"># First 20 countries with employment data</span></div><div class="line">countries = np.array([</div><div class="line">    <span class="string">&apos;Afghanistan&apos;</span>, <span class="string">&apos;Albania&apos;</span>, <span class="string">&apos;Algeria&apos;</span>, <span class="string">&apos;Angola&apos;</span>, <span class="string">&apos;Argentina&apos;</span>,</div><div class="line">    <span class="string">&apos;Armenia&apos;</span>, <span class="string">&apos;Australia&apos;</span>, <span class="string">&apos;Austria&apos;</span>, <span class="string">&apos;Azerbaijan&apos;</span>, <span class="string">&apos;Bahamas&apos;</span>,</div><div class="line">    <span class="string">&apos;Bahrain&apos;</span>, <span class="string">&apos;Bangladesh&apos;</span>, <span class="string">&apos;Barbados&apos;</span>, <span class="string">&apos;Belarus&apos;</span>, <span class="string">&apos;Belgium&apos;</span>,</div><div class="line">    <span class="string">&apos;Belize&apos;</span>, <span class="string">&apos;Benin&apos;</span>, <span class="string">&apos;Bhutan&apos;</span>, <span class="string">&apos;Bolivia&apos;</span>,</div><div class="line">    <span class="string">&apos;Bosnia and Herzegovina&apos;</span></div><div class="line">])</div><div class="line"></div><div class="line"><span class="comment"># Employment data in 2007 for those 20 countries</span></div><div class="line">employment = np.array([</div><div class="line">    <span class="number">55.70000076</span>,  <span class="number">51.40000153</span>,  <span class="number">50.5</span>       ,  <span class="number">75.69999695</span>,</div><div class="line">    <span class="number">58.40000153</span>,  <span class="number">40.09999847</span>,  <span class="number">61.5</span>       ,  <span class="number">57.09999847</span>,</div><div class="line">    <span class="number">60.90000153</span>,  <span class="number">66.59999847</span>,  <span class="number">60.40000153</span>,  <span class="number">68.09999847</span>,</div><div class="line">    <span class="number">66.90000153</span>,  <span class="number">53.40000153</span>,  <span class="number">48.59999847</span>,  <span class="number">56.79999924</span>,</div><div class="line">    <span class="number">71.59999847</span>,  <span class="number">58.40000153</span>,  <span class="number">70.40000153</span>,  <span class="number">41.20000076</span></div><div class="line">])</div></pre></td></tr></table></figure>
+        <h1 id="&#x5BFC;&#x5165;numpy&#x5E93;"><a href="#&#x5BFC;&#x5165;numpy&#x5E93;" class="headerlink" title="&#x5BFC;&#x5165;numpy&#x5E93;"></a>&#x5BFC;&#x5165;numpy&#x5E93;</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="comment"># First 20 countries with employment data</span></div><div class="line">countries = np.array([</div><div class="line">    <span class="string">&apos;Afghanistan&apos;</span>, <span class="string">&apos;Albania&apos;</span>, <span class="string">&apos;Algeria&apos;</span>, <span class="string">&apos;Angola&apos;</span>, <span class="string">&apos;Argentina&apos;</span>,</div><div class="line">    <span class="string">&apos;Armenia&apos;</span>, <span class="string">&apos;Australia&apos;</span>, <span class="string">&apos;Austria&apos;</span>, <span class="string">&apos;Azerbaijan&apos;</span>, <span class="string">&apos;Bahamas&apos;</span>,</div><div class="line">    <span class="string">&apos;Bahrain&apos;</span>, <span class="string">&apos;Bangladesh&apos;</span>, <span class="string">&apos;Barbados&apos;</span>, <span class="string">&apos;Belarus&apos;</span>, <span class="string">&apos;Belgium&apos;</span>,</div><div class="line">    <span class="string">&apos;Belize&apos;</span>, <span class="string">&apos;Benin&apos;</span>, <span class="string">&apos;Bhutan&apos;</span>, <span class="string">&apos;Bolivia&apos;</span>,</div><div class="line">    <span class="string">&apos;Bosnia and Herzegovina&apos;</span></div><div class="line">])</div><div class="line"></div><div class="line"><span class="comment"># Employment data in 2007 for those 20 countries</span></div><div class="line">employment = np.array([</div><div class="line">    <span class="number">55.70000076</span>,  <span class="number">51.40000153</span>,  <span class="number">50.5</span>       ,  <span class="number">75.69999695</span>,</div><div class="line">    <span class="number">58.40000153</span>,  <span class="number">40.09999847</span>,  <span class="number">61.5</span>       ,  <span class="number">57.09999847</span>,</div><div class="line">    <span class="number">60.90000153</span>,  <span class="number">66.59999847</span>,  <span class="number">60.40000153</span>,  <span class="number">68.09999847</span>,</div><div class="line">    <span class="number">66.90000153</span>,  <span class="number">53.40000153</span>,  <span class="number">48.59999847</span>,  <span class="number">56.79999924</span>,</div><div class="line">    <span class="number">71.59999847</span>,  <span class="number">58.40000153</span>,  <span class="number">70.40000153</span>,  <span class="number">41.20000076</span></div><div class="line">])</div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">max_employment</span><span class="params">(countries, employment)</span>:</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(employment)):</div><div class="line">        <span class="keyword">if</span> employment[i] == employment.max():</div><div class="line">            max_country = countries[i]</div><div class="line">            max_value = employment.max()</div><div class="line">    <span class="keyword">return</span> (max_country, max_value)</div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> max_employment(countries, employment)</div></pre></td></tr></table></figure>
 <pre><code>(&apos;Angola&apos;, 75.699996949999999)
@@ -641,16 +638,20 @@ Axes(0.125,0.125;0.775x0.775)
 <pre><code>Axes(0.125,0.125;0.775x0.775)
 </code></pre><p><img src="/2017/01/15/Numpy-and-pandas-for-1D-data/output_54_1.png" alt="png"></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -659,795 +660,34 @@ Axes(0.125,0.125;0.775x0.775)
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/14/onequerynottwo/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="ClarkYu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Notes on Data Science">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Notes on Data Science" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/14/onequerynottwo/" rel="next" title="Set the query as a table">
+                <i class="fa fa-chevron-left"></i> Set the query as a table
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/01/14/onequerynottwo/" itemprop="url">
-                  Set the query as a table
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-14T11:37:19+00:00">
-                2017-01-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SQL/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/01/14/onequerynottwo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/onequerynottwo/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># Find the players whose weight is less than the average.</div><div class="line">#</div><div class="line"># The function below performs two database queries in order to find the right players.</div><div class="line"># Refactor this code so that it performs only one query.</div><div class="line"></div><div class="line">def lightweights(cursor):</div><div class="line">    &quot;&quot;&quot;Returns a list of the players in the db whose weight is less than the average.&quot;&quot;&quot;</div><div class="line">    cursor.execute(&quot;select avg(weight) as av from players;&quot;)</div><div class="line">    av = cursor.fetchall()[0][0]  # first column of first (and only) row</div><div class="line">    cursor.execute(&quot;select name, weight from players where weight &lt; &quot; + str(av))</div><div class="line">    return cursor.fetchall()</div><div class="line"></div><div class="line"></div><div class="line">right answer:</div><div class="line"></div><div class="line">select name, weight</div><div class="line">from players, (select avg(weight) as av from players) as subq</div><div class="line">where weight &lt; av;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/14/leftjoin/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="ClarkYu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Notes on Data Science">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Notes on Data Science" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/14/leftjoin/" itemprop="url">
-                  Left and right join
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-14T10:40:32+00:00">
-                2017-01-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SQL/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/01/14/leftjoin/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/14/leftjoin/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>SQL supports a number of variations on the theme of joins. The kind of join that you have seen earlier in this course is called an inner join, and it is the most common kind of join &#x2014; so common that SQL doesn&#x2019;t actually make us say &#x201C;inner join&#x201D; to do one.</p>
-<p>But the second most common is the left join, and its mirror-image partner, the right join. The words &#x201C;left&#x201D; and &#x201C;right&#x201D; refer to the tables to the left and right of the join operator. (Above, the left table is products and the right table is sales.)</p>
-<p>A regular (inner) join returns only those rows where the two tables have entries matching the join condition. A left join returns all those rows, plus the rows where the left table has an entry but the right table doesn&#x2019;t. And a right join does the same but for the right table.</p>
-<p>(Just as &#x201C;join&#x201D; is short for &#x201C;inner join&#x201D;, so too is &#x201C;left join&#x201D; actually short for &#x201C;left outer join&#x201D;. But SQL lets us just say &#x201C;left join&#x201D;, which is a lot less typing. So we&#x2019;ll do that.)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/13/titanic-report/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="ClarkYu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Notes on Data Science">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Notes on Data Science" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/13/titanic-report/" itemprop="url">
-                  Titanic Analysis report
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-13T23:55:36+00:00">
-                2017-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DataAnalysisReport/" itemprop="url" rel="index">
-                    <span itemprop="name">DataAnalysisReport</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/01/13/titanic-report/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/13/titanic-report/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>This is one of projects of Udacity courses.</p>
-<h1 id="Titanic-Data-analysis-Report"><a href="#Titanic-Data-analysis-Report" class="headerlink" title="Titanic Data analysis Report"></a>Titanic Data analysis Report</h1><h2 id="The-aim-of-the-analysis"><a href="#The-aim-of-the-analysis" class="headerlink" title="The aim of the analysis"></a>The aim of the analysis</h2><p>Use NumPy and Pandas to analyze the Titanic data to find the relationship between multiple variables.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</div><div class="line">%pylab inline</div><div class="line"></div><div class="line">titanic_df = pd.read_csv(<span class="string">&apos;titanic-data.csv&apos;</span>)</div></pre></td></tr></table></figure>
-<h2 id="Raise-questions"><a href="#Raise-questions" class="headerlink" title="Raise questions"></a>Raise questions</h2><p>Thus Titanic is a well-known tragedy, so the mortality rate is an important measurement of the severity. In other word, the survived rate should be analyzed in detail. My major question is &#x201C;What factors can influence the survival rate and how to influence?&#x201D;</p>
-<p>In the case, the raw data uses 1 or 0 to represent the survived condition, so the mean of &#x201C;Survived&#x201D; column is actually the survival rate. It makes analysis a little succinct.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/13/titanic-report/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/13/twogithubonsamepc/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="ClarkYu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Notes on Data Science">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Notes on Data Science" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/13/twogithubonsamepc/" itemprop="url">
-                  Use two different github accounts on the PC
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-13T20:37:52+00:00">
-                2017-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Github/" itemprop="url" rel="index">
-                    <span itemprop="name">Github</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/01/13/twogithubonsamepc/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/13/twogithubonsamepc/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>I wanted to set up another HEXO blog for recording my notes on data science learning. While, when I tried to git the blog to my initial github, it lacks CSS and other elements and I didn&#x2019;t find the reason. So, I thought it was a easy way to build blog on another github account. But due to the key problem, I must set up another key for my computer.</p>
-<h2 id="set-up-another-key-for-my-new-github-account"><a href="#set-up-another-key-for-my-new-github-account" class="headerlink" title="set up another key for my new github account"></a>set up another key for my new github account</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;your-email-address&quot;</div></pre></td></tr></table></figure>
-<p>When see such img, DON&#x2019;T press the enter or name the <code>id_rsa</code>, it will cover your first key, just name it like, <code>id_rsa_2</code></p>
-<p><img src="/2017/01/13/twogithubonsamepc/1.png" alt="new name"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/13/twogithubonsamepc/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://clarkdatascience.github.io/2017/01/13/20123/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="ClarkYu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Notes on Data Science">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Notes on Data Science" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/13/20123/" itemprop="url">
-                  Use <>!= in SQL self join
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-13T17:44:51+00:00">
-                2017-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SQL/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/01/13/20123/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/13/20123/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>In this quiz, we try to find who lives in the same dorm, and the query almost works.<br><img src="/2017/01/13/20123/1.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">select a.id, b.id, a.building, a.room</div><div class="line">       from residences as a, residences as b</div><div class="line"> where a.building = b.building</div><div class="line">   and a.room = b.room and a.id &lt; b.id</div><div class="line"> group by a.room;</div><div class="line"></div><div class="line"> output:</div><div class="line"> +--------+--------+----------+------+</div><div class="line"> |     id |     id | building | room |</div><div class="line"> +========+========+==========+======+</div><div class="line"> | 881256 | 413001 |   Crosby |   10 |</div><div class="line"> | 741532 | 496747 |   Crosby |   19 |</div><div class="line"> | 931027 | 612413 |   Crosby |   31 |</div><div class="line"> | 958827 | 170267 | Dolliver |    1 |</div><div class="line"> | 707536 | 104131 | Dolliver |   14 |</div><div class="line"> | 505241 | 477801 | Dolliver |    8 |</div><div class="line"> | 824292 | 118199 | Kendrick |   1A |</div><div class="line"> | 231742 | 105540 | Kendrick |   3B |</div><div class="line"> +--------+--------+----------+------+</div></pre></td></tr></table></figure>
-<p>There, we use &lt;(or &gt;), <code>and a.room = b.room and a.id &lt; b.id</code> to make sure the situation that one person only appear once in either column1 or column2, they cannot be their own roommate. If we not add this judgment, the result will be:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">select a.id, b.id, a.building, a.room</div><div class="line">       from residences as a, residences as b</div><div class="line"> where a.building = b.building</div><div class="line">   and a.room = b.room</div><div class="line"> group by a.room;</div><div class="line"></div><div class="line"> output:</div><div class="line">+--------+--------+----------+------+</div><div class="line">|     id |     id | building | room |</div><div class="line">+========+========+==========+======+</div><div class="line">| 958827 | 958827 | Dolliver |    1 |  &lt;-- this person is their own roommate?!</div><div class="line">| 881256 | 881256 |   Crosby |   10 |  &lt;-- this person is their own roommate?!</div><div class="line">| 707536 | 707536 | Dolliver |   14 |  &lt;-- this person is their own roommate?!</div><div class="line">| 741532 | 741532 |   Crosby |   19 |  &lt;-- this person is their own roommate?!</div><div class="line">| 824292 | 824292 | Kendrick |   1A |  &lt;-- this person is their own roommate?!</div><div class="line">| 410315 | 410315 |   Crosby |   20 |  &lt;-- this person is their own roommate?!</div><div class="line">| 498446 | 498446 |   Crosby |   21 |  &lt;-- this person is their own roommate?!</div><div class="line">| 851866 | 851866 |   Crosby |   22 |  &lt;-- this person is their own roommate?!</div><div class="line">| 250841 | 250841 | Kendrick |   2B |  &lt;-- this person is their own roommate?!</div><div class="line">| 931027 | 931027 |   Crosby |   31 |  &lt;-- this person is their own roommate?!</div><div class="line">| 231742 | 231742 | Kendrick |   3B |  &lt;-- this person is their own roommate?!</div><div class="line">| 161282 | 161282 | Dolliver |    7 |  &lt;-- this person is their own roommate?!</div><div class="line">| 505241 | 505241 | Dolliver |    8 |  &lt;-- this person is their own roommate?!</div><div class="line">| 762907 | 762907 | Dolliver |    9 |  &lt;-- this person is their own roommate?!</div><div class="line">+--------+--------+----------+------+</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -1455,6 +695,17 @@ Axes(0.125,0.125;0.775x0.775)
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -1474,8 +725,17 @@ Axes(0.125,0.125;0.775x0.775)
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -1551,6 +811,22 @@ Axes(0.125,0.125;0.775x0.775)
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#导入numpy库"><span class="nav-number">1.</span> <span class="nav-text">导入numpy库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#各种数理运算"><span class="nav-number">2.</span> <span class="nav-text">各种数理运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数的应用"><span class="nav-number">3.</span> <span class="nav-text">函数的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用index特性和逻辑关系来处理arrays"><span class="nav-number">4.</span> <span class="nav-text">用index特性和逻辑关系来处理arrays</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#numpy数组互相的运算"><span class="nav-number">5.</span> <span class="nav-text">numpy数组互相的运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导入Pandas库"><span class="nav-number">6.</span> <span class="nav-text">导入Pandas库</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -1657,6 +933,10 @@ Axes(0.125,0.125;0.775x0.775)
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
@@ -1673,9 +953,9 @@ Axes(0.125,0.125;0.775x0.775)
 
     <script type="text/javascript">
       var disqus_shortname = 'clarkyu';
-      var disqus_identifier = 'index.html';
+      var disqus_identifier = '2017/01/15/Numpy-and-pandas-for-1D-data/';
 
-      var disqus_title = "";
+      var disqus_title = "Numpy and pandas for data";
 
 
       function run_disqus_script(disqus_script) {
@@ -1688,6 +968,13 @@ Axes(0.125,0.125;0.775x0.775)
 
       run_disqus_script('count.js');
 
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
       
 
     </script>
